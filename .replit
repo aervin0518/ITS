@@ -1,0 +1,34 @@
+modules = ["nodejs-24", "postgresql-16"]
+
+[[artifacts]]
+id = "artifacts/api-server"
+
+[[artifacts]]
+id = "artifacts/mockup-sandbox"
+
+[deployment]
+router = "application"
+deploymentTarget = "autoscale"
+
+[deployment.postBuild]
+args = ["pnpm", "store", "prune"]
+env = { "CI" = "true" }
+
+[workflows]
+runButton = "Project"
+
+[agent]
+stack = "PNPM_WORKSPACE"
+expertMode = true
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000
+
+[userenv]
+
+[userenv.shared]
+NEXT_PUBLIC_SITE_URL = "https://bcebf006-3e1b-44fb-bfb4-c9f25275ff8a-00-2srwpx8zclcbp.picard.replit.dev"
+
+[nix]
+channel = "stable-25_05"

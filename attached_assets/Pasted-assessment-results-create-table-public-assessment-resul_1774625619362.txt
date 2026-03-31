@@ -1,0 +1,139 @@
+assessment_results
+create table public.assessment_results (
+  id uuid not null default gen_random_uuid (),
+  assessment_id uuid null default gen_random_uuid (),
+  father_profile_id uuid null default gen_random_uuid (),
+  submitted_at timestamp with time zone null,
+  score_total double precision null,
+  score_breakdown_json jsonb null,
+  interpretation_text character varying null,
+  constraint assessment_results_pkey primary key (id),
+  constraint assessment_results_assessment_id_fkey foreign KEY (assessment_id) references assessments (id) on update CASCADE on delete CASCADE,
+  constraint assessment_results_father_profile_id_fkey foreign KEY (father_profile_id) references father_profiles (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+
+Assessments
+create table public.assessments (
+  id uuid not null default gen_random_uuid (),
+  name character varying null,
+  version character varying null,
+  scoring_model character varying null,
+  constraint assessments_pkey primary key (id)
+) TABLESPACE pg_default;
+
+Audit logs
+create table public.audit_logs (
+  id uuid not null default gen_random_uuid (),
+  created_at timestamp with time zone not null default now(),
+  user_id uuid null default gen_random_uuid (),
+  action character varying null,
+  entity_type character varying null,
+  entity_id uuid null default gen_random_uuid (),
+  details_json jsonb null,
+  constraint audit_logs_pkey primary key (id),
+  constraint audit_logs_user_id_fkey foreign KEY (user_id) references user_profiles (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+father_profiles
+create table public.father_profiles (
+  id uuid not null default gen_random_uuid (),
+  created_at timestamp with time zone not null default now(),
+  external_profile_code character varying null,
+  first_name character varying null,
+  last_name character varying null,
+  display_name character varying null,
+  date_of_birth date null,
+  city character varying null,
+  state character varying null,
+  zip_code character varying null,
+  county character varying null,
+  metro_area character varying null,
+  demographic_group character varying null,
+  justice_involved_flag boolean null,
+  young_father_flag boolean null,
+  consent_status character varying null,
+  updated_at timestamp with time zone null,
+  constraint father_profiles_pkey primary key (id)
+) TABLESPACE pg_default;
+files
+create table public.files (
+  id uuid not null default gen_random_uuid (),
+  uploaded_at timestamp with time zone not null default now(),
+  owner_record_type character varying null,
+  owner_record_id uuid null default gen_random_uuid (),
+  file_name character varying null,
+  storage_url character varying null,
+  mime_type character varying null,
+  uploaded_by_user_id uuid null default gen_random_uuid (),
+  constraint files_pkey primary key (id),
+  constraint files_uploaded_by_user_id_fkey foreign KEY (uploaded_by_user_id) references user_profiles (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+
+interviews
+create table public.interviews (
+  id uuid not null default gen_random_uuid (),
+  father_profile_id uuid null default gen_random_uuid (),
+  program_id uuid null default gen_random_uuid (),
+  interviewer_user_id uuid null default gen_random_uuid (),
+  interview_date timestamp with time zone null,
+  status character varying null,
+  notes character varying null,
+  constraint interviews_pkey primary key (id),
+  constraint interviews_father_profile_id_fkey foreign KEY (father_profile_id) references father_profiles (id) on update CASCADE on delete CASCADE,
+  constraint interviews_interviewer_user_id_fkey foreign KEY (interviewer_user_id) references user_profiles (id) on update CASCADE on delete CASCADE,
+  constraint interviews_program_id_fkey foreign KEY (program_id) references programs (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+Publications
+create table public.publications (
+  id uuid not null default gen_random_uuid (),
+  published_at timestamp with time zone not null default now(),
+  title character varying null,
+  publication_type character varying null,
+  slug character varying null,
+  abstract text null,
+  status character varying null,
+  author_json jsonb null,
+  body_markdown text null,
+  constraint publications_pkey primary key (id),
+  constraint publications_slug_key unique (slug)
+) TABLESPACE pg_default;
+survey_responses
+create table public.survey_responses (
+  id uuid not null default gen_random_uuid (),
+  survey_id uuid null default gen_random_uuid (),
+  father_profile_id uuid null default gen_random_uuid (),
+  submission_source character varying null,
+  submitted_at timestamp with time zone null,
+  raw_payload_json jsonb null,
+  normalized_payload_json jsonb null,
+  completion_status character varying null,
+  constraint survey_responses_pkey primary key (id),
+  constraint survey_responses_father_profile_id_fkey foreign KEY (father_profile_id) references father_profiles (id) on update CASCADE on delete CASCADE,
+  constraint survey_responses_survey_id_fkey foreign KEY (survey_id) references surveys (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+Surveys
+create table public.surveys (
+  id uuid not null default gen_random_uuid (),
+  name character varying null,
+  source_system character varying null,
+  version character varying null,
+  active_flag boolean null,
+  constraint surveys_pkey primary key (id)
+) TABLESPACE pg_default;
+Transcripts
+create table public.transcripts (
+  id uuid not null default gen_random_uuid (),
+  created_at timestamp with time zone not null default now(),
+  interview_id uuid null default gen_random_uuid (),
+  father_profile_id uuid null default gen_random_uuid (),
+  source_type character varying null,
+  file_url character varying null,
+  raw_text text null,
+  cleaned_text text null,
+  language character varying null,
+  processed_flag boolean null,
+  constraint transcripts_pkey primary key (id),
+  constraint transcripts_father_profile_id_fkey foreign KEY (father_profile_id) references father_profiles (id) on update CASCADE on delete CASCADE,
+  constraint transcripts_interview_id_fkey foreign KEY (interview_id) references interviews (id) on update CASCADE on delete CASCADE
+) TABLESPACE pg_default;
+
+

@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Innovative Technology Strategies — Research & Knowledge Hub. Explore Insights, Articles, Briefs, and Reports on fatherhood, family, and community impact.">
+<title>Research Hub — Innovative Technology Strategies | ITS Fatherhood</title>
+
+<!-- Fonts: Cabinet Grotesk (display) + Source Serif 4 (body/long-form) -->
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Type Scale */
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Content widths */
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+
+  /* Fonts */
+  --font-display: 'Cabinet Grotesk', 'Helvetica Neue', sans-serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
+  --font-ui:      'Cabinet Grotesk', 'Helvetica Neue', sans-serif;
+}
+
+/* ITS Brand Palette — Navy + Orange + Warm neutrals */
+:root, [data-theme="light"] {
+  /* Brand colors from site */
+  --brand-navy:       #1B2A4A;
+  --brand-navy-deep:  #0f1c33;
+  --brand-navy-mid:   #2c3e5e;
+  --brand-orange:     #E8572A;
+  --brand-orange-hover: #cf4318;
+  --brand-blue-accent:#4A90D9;
+
+  /* Surfaces */
+  --color-bg:             #f8f7f4;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #f3f1ed;
+  --color-surface-offset: #ece9e4;
+  --color-divider:        #ddd9d3;
+  --color-border:         #d0ccc6;
+
+  /* Text */
+  --color-text:           #1a1714;
+  --color-text-muted:     #6b6865;
+  --color-text-faint:     #b0aeaa;
+  --color-text-inverse:   #f9f8f5;
+
+  /* Semantic */
+  --color-primary:        #1B2A4A;
+  --color-primary-hover:  #0f1c33;
+  --color-accent:         #E8572A;
+  --color-accent-hover:   #cf4318;
+  --color-accent-highlight: #f9e8e2;
+
+  /* Content type colors */
+  --color-briefs:         #1B2A4A;
+  --color-briefs-bg:      #e8ecf4;
+  --color-insights:       #b85c00;
+  --color-insights-bg:    #fdf0e5;
+  --color-articles:       #7a39bb;
+  --color-articles-bg:    #f0eaf9;
+  --color-reports:        #1a6b4a;
+  --color-reports-bg:     #e5f4ed;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(26, 42, 74, 0.06);
+  --shadow-md: 0 4px 16px rgba(26, 42, 74, 0.09);
+  --shadow-lg: 0 12px 40px rgba(26, 42, 74, 0.13);
+}
+
+[data-theme="dark"] {
+  --color-bg:             #111318;
+  --color-surface:        #171a22;
+  --color-surface-2:      #1e2230;
+  --color-surface-offset: #1b1e28;
+  --color-divider:        #252a38;
+  --color-border:         #303548;
+  --color-text:           #d4d2ce;
+  --color-text-muted:     #7d7c7a;
+  --color-text-faint:     #4e4d4c;
+  --color-text-inverse:   #1a1714;
+  --color-primary:        #6b90d4;
+  --color-primary-hover:  #4f78c4;
+  --color-accent:         #f07a52;
+  --color-accent-hover:   #e8572a;
+  --color-accent-highlight: #3a2419;
+
+  --color-briefs:         #7ba3e0;
+  --color-briefs-bg:      #1a2235;
+  --color-insights:       #e8a06a;
+  --color-insights-bg:    #2a1e12;
+  --color-reports:        #5db88a;
+  --color-reports-bg:     #12281e;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.35);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-16);
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 0.25s, color 0.25s;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+ul[role="list"], ol[role="list"] { list-style: none; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+p, li, figcaption { text-wrap: pretty; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+
+a, button, [role="button"] {
+  transition: color var(--transition-interactive),
+              background var(--transition-interactive),
+              border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive),
+              transform var(--transition-interactive);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background: rgba(232, 87, 42, 0.2);
+  color: var(--color-text);
+}
+
+/* System dark mode fallback */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #111318;
+    --color-surface: #171a22;
+    --color-surface-2: #1e2230;
+    --color-surface-offset: #1b1e28;
+    --color-divider: #252a38;
+    --color-border: #303548;
+    --color-text: #d4d2ce;
+    --color-text-muted: #7d7c7a;
+    --color-text-faint: #4e4d4c;
+    --color-primary: #6b90d4;
+    --color-accent: #f07a52;
+    --color-briefs: #7ba3e0;
+    --color-briefs-bg: #1a2235;
+    --color-insights: #e8a06a;
+    --color-insights-bg: #2a1e12;
+    --color-articles: #a86fdf;
+    --color-articles-bg: #2a1e38;
+    --color-reports: #5db88a;
+    --color-reports-bg: #12281e;
+  }
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-6), 5vw, var(--space-16));
+}
+.container--narrow {
+  max-width: var(--content-narrow);
+}
+.container--default {
+  max-width: var(--content-default);
+}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: oklch(from var(--color-bg, #f8f7f4) l c h / 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-divider);
+  transition: box-shadow 0.3s;
+}
+
+.site-header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: var(--space-6);
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.site-logo svg {
+  width: 36px;
+  height: 36px;
+}
+
+.site-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand-navy);
+}
+
+[data-theme="dark"] .logo-main {
+  color: var(--color-text);
+}
+
+.logo-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.nav-link {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+}
+
+.nav-link.active {
+  color: var(--brand-navy);
+  background: var(--color-briefs-bg);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: var(--color-briefs);
+  background: var(--color-briefs-bg);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+.theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  background: var(--brand-navy);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background var(--transition-interactive), transform var(--transition-interactive);
+}
+.btn-primary:hover {
+  background: var(--brand-navy-deep);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  background: var(--brand-navy);
+  color: #fff;
+  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(74, 144, 217, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(232, 87, 42, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-10), 6vw, var(--space-20));
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  background: rgba(232, 87, 42, 0.2);
+  border: 1px solid rgba(232, 87, 42, 0.35);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f89f82;
+  margin-bottom: var(--space-5);
+}
+
+.hero-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+  color: #fff;
+}
+
+.hero-title span {
+  color: var(--brand-orange);
+}
+
+.hero-desc {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.72);
+  max-width: 52ch;
+  margin-bottom: var(--space-8);
+  line-height: 1.65;
+  font-family: var(--font-body);
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--brand-orange);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+.btn-accent:hover {
+  background: var(--brand-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 87, 42, 0.35);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  transition: border-color var(--transition-interactive), background var(--transition-interactive);
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Hero visual panel */
+.hero-visual {
+  position: relative;
+}
+
+.hero-type-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.hero-type-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(8px);
+  transition: background var(--transition-interactive), transform var(--transition-interactive);
+}
+.hero-type-card:hover {
+  background: rgba(255,255,255,0.11);
+  transform: translateX(4px);
+}
+
+.hero-type-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.icon-brief  { background: rgba(107, 144, 212, 0.25); }
+.icon-insight { background: rgba(232, 160, 106, 0.25); }
+.icon-report { background: rgba(93, 184, 138, 0.25); }
+
+.hero-type-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-1);
+}
+.label-brief   { color: #7ba3e0; }
+.label-insight { color: #e8a06a; }
+.label-report  { color: #5db88a; }
+
+.hero-type-desc {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.62);
+  line-height: 1.5;
+}
+
+.hero-stat-row {
+  display: flex;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-stat-num {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.5);
+  margin-top: var(--space-1);
+}
+
+/* ============================================================
+   COMPARISON SECTION
+   ============================================================ */
+.section-compare {
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+  background: var(--color-bg);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.section-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  margin-bottom: var(--space-12);
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+
+/* 3-column compare grid */
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.compare-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
+}
+.compare-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card-header {
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.card-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.badge-brief   { background: var(--color-briefs-bg);    color: var(--color-briefs); }
+.badge-insight { background: var(--color-insights-bg);  color: var(--color-insights); }
+.badge-article { background: var(--color-articles-bg);  color: var(--color-articles); }
+.badge-report  { background: var(--color-reports-bg);   color: var(--color-reports); }
+
+.card-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  margin-bottom: var(--space-3);
+}
+
+.card-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.card-body {
+  padding: var(--space-5) var(--space-6);
+}
+
+.card-definition {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.card-traits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.card-traits li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.trait-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.45em;
+}
+.dot-brief   { background: var(--color-briefs); }
+.dot-insight { background: var(--color-insights); }
+.dot-article { background: var(--color-articles); }
+.dot-report  { background: var(--color-reports); }
+
+.card-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-divider);
+}
+
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+}
+
+/* ============================================================
+   COMPARISON TABLE
+   ============================================================ */
+.compare-table-wrap {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table thead th {
+  background: var(--color-surface-offset);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.compare-table thead th:first-child {
+  color: var(--color-text);
+}
+
+.compare-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.col-brief   { color: var(--color-briefs); }
+.col-insight { color: var(--color-insights); }
+.col-article { color: var(--color-articles); }
+.col-report  { color: var(--color-reports); }
+
+.th-brief   { border-top: 3px solid var(--color-briefs)   !important; }
+.th-insight { border-top: 3px solid var(--color-insights) !important; }
+.th-article { border-top: 3px solid var(--color-articles) !important; }
+.th-report  { border-top: 3px solid var(--color-reports)  !important; }
+
+/* ============================================================
+   EXAMPLE SECTION
+   ============================================================ */
+.section-examples {
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+  background: var(--color-surface-2);
+}
+
+.tabs-row {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-10);
+  background: var(--color-surface-offset);
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.tab-btn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-interactive);
+  border: none;
+  background: none;
+}
+
+.tab-btn:hover {
+  color: var(--color-text);
+}
+
+.tab-btn.active[data-type="brief"] {
+  background: var(--color-briefs);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(27, 42, 74, 0.25);
+}
+.tab-btn.active[data-type="insight"] {
+  background: var(--color-insights);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(184, 92, 0, 0.25);
+}
+.tab-btn.active[data-type="article"] {
+  background: var(--color-articles);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(122, 57, 187, 0.25);
+}
+.tab-btn.active[data-type="report"] {
+  background: var(--color-reports);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(26, 107, 74, 0.2);
+}
+
+.tab-panel {
+  display: none;
+}
+.tab-panel.active {
+  display: block;
+}
+
+.example-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.example-context {
+  position: sticky;
+  top: calc(64px + var(--space-6));
+}
+
+.example-eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+.eyebrow-brief   { color: var(--color-briefs); }
+.eyebrow-insight { color: var(--color-insights); }
+.eyebrow-article { color: var(--color-articles); }
+.eyebrow-report  { color: var(--color-reports); }
+
+.example-context h3 {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+}
+
+.example-context p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.context-facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.fact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.fact-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.fact-value {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.fact-value.brief-val   { color: var(--color-briefs); }
+.fact-value.insight-val { color: var(--color-insights); }
+.fact-value.article-val { color: var(--color-articles); }
+.fact-value.report-val  { color: var(--color-reports); }
+
+/* Example document card */
+.example-doc {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.doc-header {
+  padding: var(--space-6) var(--space-8);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.doc-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.doc-number {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+}
+
+.doc-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.doc-meta-item {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.doc-body {
+  padding: var(--space-6) var(--space-8);
+}
+
+.doc-abstract {
+  font-size: var(--text-base);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.75;
+  margin-bottom: var(--space-5);
+}
+
+.doc-abstract strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.doc-finding-box {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+}
+
+.finding-brief   { background: var(--color-briefs-bg);   border-left: 3px solid var(--color-briefs); }
+.finding-insight { background: var(--color-insights-bg); border-left: 3px solid var(--color-insights); }
+.finding-article { background: var(--color-articles-bg); border-left: 3px solid var(--color-articles); }
+.finding-report  { background: var(--color-reports-bg);  border-left: 3px solid var(--color-reports); }
+
+.finding-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+.finding-label.brief-lbl   { color: var(--color-briefs); }
+.finding-label.insight-lbl { color: var(--color-insights); }
+.finding-label.article-lbl { color: var(--color-articles); }
+.finding-label.report-lbl  { color: var(--color-reports); }
+
+.finding-text {
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.doc-section-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.doc-section-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.doc-section-item:last-child { border-bottom: none; }
+
+.section-num {
+  font-weight: 700;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  min-width: 20px;
+}
+
+.doc-cta-row {
+  padding: var(--space-5) var(--space-8);
+  background: var(--color-surface-offset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.doc-cta-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.btn-type {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #fff;
+  transition: all var(--transition-interactive);
+}
+.btn-brief   { background: var(--color-briefs);  }
+.btn-brief:hover   { background: #12203f; transform: translateY(-1px); }
+.btn-insight { background: var(--color-insights);}
+.btn-insight:hover { background: #8a4000; transform: translateY(-1px); }
+.btn-article { background: var(--color-articles); }
+.btn-article:hover { background: #5f2699; transform: translateY(-1px); }
+.btn-report  { background: var(--color-reports); }
+.btn-report:hover  { background: #0f5033; transform: translateY(-1px); }
+
+/* ============================================================
+   AT A GLANCE VISUAL SECTION
+   ============================================================ */
+.section-glance {
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+  background: var(--brand-navy);
+  color: #fff;
+}
+
+.glance-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.glance-header .section-label {
+  justify-content: center;
+  color: #f89f82;
+}
+
+.glance-header .section-title {
+  color: #fff;
+}
+
+.glance-header .section-desc {
+  color: rgba(255,255,255,0.65);
+  margin-inline: auto;
+}
+
+.spectrum-wrap {
+  position: relative;
+  padding: var(--space-8) 0;
+}
+
+.spectrum-track {
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(to right, rgba(232,160,106,0.8), rgba(168,111,223,0.8), rgba(107,144,212,0.8), rgba(93,184,138,0.8));
+  margin-bottom: var(--space-16);
+  position: relative;
+}
+
+.spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.45);
+}
+
+.spectrum-nodes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.spectrum-node {
+  text-align: center;
+  padding: var(--space-6);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl);
+  transition: background var(--transition-interactive);
+}
+.spectrum-node:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+.node-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-bottom: var(--space-4);
+  font-size: 1.6rem;
+}
+.wrap-brief   { background: rgba(107, 144, 212, 0.2); border: 2px solid rgba(107, 144, 212, 0.4); }
+.wrap-insight { background: rgba(232, 160, 106, 0.2); border: 2px solid rgba(232, 160, 106, 0.4); }
+.wrap-article { background: rgba(168, 111, 223, 0.2); border: 2px solid rgba(168, 111, 223, 0.4); }
+.wrap-report  { background: rgba(93, 184, 138, 0.2);  border: 2px solid rgba(93, 184, 138, 0.4); }
+
+.node-type-name {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+.node-one-liner {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-body);
+  font-style: italic;
+  margin-bottom: var(--space-5);
+  line-height: 1.5;
+}
+
+.node-dims {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: left;
+}
+
+.dim-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-md);
+}
+
+.dim-key {
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dim-val {
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ============================================================
+   BROWSE ALL SECTION
+   ============================================================ */
+.section-browse {
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+  background: var(--color-bg);
+}
+
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.pub-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  padding: var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: box-shadow var(--transition-interactive), transform var(--transition-interactive), border-color var(--transition-interactive);
+  box-shadow: var(--shadow-sm);
+}
+.pub-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-border);
+}
+
+.pub-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pub-card-body {
+  flex: 1;
+}
+
+.pub-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+.pub-excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pub-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+
+.pub-date {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.pub-link {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: gap var(--transition-interactive);
+}
+.pub-link:hover { gap: var(--space-2); }
+
+.link-brief   { color: var(--color-briefs); }
+.link-insight { color: var(--color-insights); }
+.link-article { color: var(--color-articles); }
+.link-report  { color: var(--color-reports); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--brand-navy-deep);
+  color: rgba(255,255,255,0.65);
+  padding-block: var(--space-10);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+
+.footer-tagline {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.footer-bottom {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.35);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    display: none;
+  }
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+  .example-layout {
+    grid-template-columns: 1fr;
+  }
+  .example-context {
+    position: static;
+  }
+  .spectrum-nodes {
+    grid-template-columns: 1fr;
+  }
+  .browse-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .spectrum-nodes {
+    grid-template-columns: 1fr 1fr;
+  }
+  .compare-table thead th:nth-child(n+2) { font-size: 0.7rem; }
+  .browse-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  opacity: 0;
+  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in { animation: none; opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="https://www.itsfatherhood.org" class="site-logo" aria-label="ITS Fatherhood home">
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <circle cx="18" cy="18" r="18" fill="#1B2A4A"/>
+          <circle cx="18" cy="13" r="4.5" fill="#4A90D9"/>
+          <path d="M9 28c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="#E8572A" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M22.5 10.5 L27 7 M13.5 10.5 L9 7" stroke="#4A90D9" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="site-logo-text">
+          <span class="logo-main">I.T.S.</span>
+          <span class="logo-sub">itsfatherhood.org</span>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#compare" class="nav-link active">Research Hub</a>
+        <a href="#examples" class="nav-link">Examples</a>
+        <a href="#browse" class="nav-link">Browse All</a>
+        <a href="https://www.itsfatherhood.org/impact" class="nav-link">Impact</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <a href="https://www.itsfatherhood.org/join-us" class="btn-primary">Join Us</a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-content">
+        <div class="hero-eyebrow animate-in">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+            <circle cx="6" cy="6" r="5"/>
+          </svg>
+          Research &amp; Knowledge Hub
+        </div>
+        <h1 class="hero-title animate-in delay-1" id="hero-title">
+          Know the Difference.<br>
+          Find What You <span>Need.</span>
+        </h1>
+        <p class="hero-desc animate-in delay-2">
+          I.T.S. publishes four distinct types of content — Insights, Articles, Briefs, and Reports. Each serves a different purpose, audience, and depth. This guide helps you find the right resource for where you are in your fatherhood journey.
+        </p>
+        <div class="hero-cta-row animate-in delay-3">
+          <a href="#compare" class="btn-accent">Compare Content Types</a>
+          <a href="#examples" class="btn-ghost">See Examples ↓</a>
+        </div>
+
+        <div class="hero-stat-row animate-in delay-4">
+          <div>
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Content Types</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">40+</div>
+            <div class="hero-stat-label">Publications</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">5K+</div>
+            <div class="hero-stat-label">Fathers Reached</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual panel — content type preview cards -->
+      <div class="hero-visual animate-in delay-2" aria-hidden="true">
+        <div class="hero-type-cards">
+
+          <div class="hero-type-card">
+            <div class="hero-type-icon icon-insight">💡</div>
+            <div>
+              <div class="hero-type-label label-insight">Insight</div>
+              <div class="hero-type-desc">Data-informed analysis with practical takeaways. Connects research to real fatherhood decisions.</div>
+            </div>
+          </div>
+
+          <div class="hero-type-card">
+            <div class="hero-type-icon" style="background:rgba(168,111,223,0.25)">✍️</div>
+            <div>
+              <div class="hero-type-label" style="color:#a86fdf">Article</div>
+              <div class="hero-type-desc">Narrative-driven editorial pieces exploring fatherhood through personal story and cultural context.</div>
+            </div>
+          </div>
+
+          <div class="hero-type-card">
+            <div class="hero-type-icon icon-brief">📋</div>
+            <div>
+              <div class="hero-type-label label-brief">Brief</div>
+              <div class="hero-type-desc">2–4 page rapid summary. Key findings, fast action. Perfect for busy fathers who need the essentials now.</div>
+            </div>
+          </div>
+
+          <div class="hero-type-card">
+            <div class="hero-type-icon icon-report">📊</div>
+            <div>
+              <div class="hero-type-label label-report">Report</div>
+              <div class="hero-type-desc">Comprehensive research with methodology, findings, and policy recommendations. Built for partners and advocates.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     COMPARE SECTION — 3-Card + Table
+     ============================================================ -->
+<section class="section-compare" id="compare" aria-labelledby="compare-title">
+  <div class="container">
+
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="2" width="10" height="10" rx="2"/>
+        <path d="M5 7h4M7 5v4"/>
+      </svg>
+      Content Types Explained
+    </div>
+    <h2 class="section-title" id="compare-title">Four Types. One Mission.</h2>
+    <p class="section-desc">
+      Every publication from I.T.S. is designed to empower fathers — but at different levels of depth, for different needs and audiences. Here's what sets each apart.
+    </p>
+
+    <!-- 4-column comparison cards -->
+    <div class="compare-grid" style="grid-template-columns: repeat(4, 1fr);">
+
+      <!-- INSIGHT -->
+      <article class="compare-card" aria-labelledby="card-title-insight">
+        <div class="card-header">
+          <div class="card-type-badge badge-insight">&#x1F4A1; &nbsp; Insight</div>
+          <h3 class="card-title" id="card-title-insight">Data-Informed Analysis</h3>
+          <p class="card-subtitle">Research applied to real life.</p>
+        </div>
+        <div class="card-body">
+          <p class="card-definition">
+            An Insight piece analyzes trends, survey data, or program outcomes and connects them to practical strategies. It's the bridge between raw research and real-world decision-making — for coaches, mentors, and engaged fathers.
+          </p>
+          <ul class="card-traits" role="list">
+            <li><span class="trait-dot dot-insight"></span>6–12 pages with charts, graphs, or data tables</li>
+            <li><span class="trait-dot dot-insight"></span>Includes narrative context and interpretation</li>
+            <li><span class="trait-dot dot-insight"></span>Draws on surveys, program data, or interviews</li>
+            <li><span class="trait-dot dot-insight"></span>Closes with strategies for practitioners</li>
+          </ul>
+          <div class="card-meta-row">
+            <span class="meta-chip">&#x23F1; 10–15 min read</span>
+            <span class="meta-chip">&#x1F465; Mentors &amp; coaches</span>
+            <span class="meta-chip">&#x1F4C4; 6–12 pages</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTICLE -->
+      <article class="compare-card" aria-labelledby="card-title-article">
+        <div class="card-header">
+          <div class="card-type-badge badge-article">&#x270D;&#xFE0F; &nbsp; Article</div>
+          <h3 class="card-title" id="card-title-article">Narrative Editorial Piece</h3>
+          <p class="card-subtitle">Stories that teach and inspire.</p>
+        </div>
+        <div class="card-body">
+          <p class="card-definition">
+            An Article is a longer-form editorial piece — written with narrative voice, personal perspective, and real-world examples. Articles explore fatherhood topics through storytelling, lived experience, and cultural context.
+          </p>
+          <ul class="card-traits" role="list">
+            <li><span class="trait-dot dot-article"></span>800–2,000 words; editorial magazine style</li>
+            <li><span class="trait-dot dot-article"></span>Combines personal story with broader context</li>
+            <li><span class="trait-dot dot-article"></span>Written in first or second person; conversational</li>
+            <li><span class="trait-dot dot-article"></span>Shareable on blog, social media, and newsletter</li>
+          </ul>
+          <div class="card-meta-row">
+            <span class="meta-chip">&#x23F1; 5–8 min read</span>
+            <span class="meta-chip">&#x1F465; All fathers</span>
+            <span class="meta-chip">&#x1F4DD; Blog / Newsletter</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- BRIEF -->
+      <article class="compare-card" aria-labelledby="card-title-brief">
+        <div class="card-header">
+          <div class="card-type-badge badge-brief">&#x1F4CB; &nbsp; Brief</div>
+          <h3 class="card-title" id="card-title-brief">Quick-Read Summary</h3>
+          <p class="card-subtitle">The essential findings — fast.</p>
+        </div>
+        <div class="card-body">
+          <p class="card-definition">
+            A Brief is a concise 2–4 page document that distills complex research into clear, actionable points. Written for fathers on the go, program staff, or community leaders who need trusted information without the deep dive.
+          </p>
+          <ul class="card-traits" role="list">
+            <li><span class="trait-dot dot-brief"></span>Concise: 2–4 pages, scan-friendly format</li>
+            <li><span class="trait-dot dot-brief"></span>Written in plain language for general audiences</li>
+            <li><span class="trait-dot dot-brief"></span>Ends with 3–5 immediate action steps</li>
+            <li><span class="trait-dot dot-brief"></span>Designed to share easily with other fathers</li>
+          </ul>
+          <div class="card-meta-row">
+            <span class="meta-chip">&#x23F1; 3–5 min read</span>
+            <span class="meta-chip">&#x1F465; Fathers &amp; families</span>
+            <span class="meta-chip">&#x1F4C4; 2–4 pages</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- REPORT -->
+      <article class="compare-card" aria-labelledby="card-title-report">
+        <div class="card-header">
+          <div class="card-type-badge badge-report">&#x1F4CA; &nbsp; Report</div>
+          <h3 class="card-title" id="card-title-report">Full Research Report</h3>
+          <p class="card-subtitle">Comprehensive. Cited. Authoritative.</p>
+        </div>
+        <div class="card-body">
+          <p class="card-definition">
+            A Report is I.T.S.'s flagship research publication — a full-length study with methodology, participant data, literature review, findings, and policy recommendations. Built for nonprofits, government partners, and academic audiences.
+          </p>
+          <ul class="card-traits" role="list">
+            <li><span class="trait-dot dot-report"></span>15–40 pages with full methodology section</li>
+            <li><span class="trait-dot dot-report"></span>Peer-reviewed citations and data appendix</li>
+            <li><span class="trait-dot dot-report"></span>Includes policy &amp; program recommendations</li>
+            <li><span class="trait-dot dot-report"></span>Suitable for grant applications and advocacy</li>
+          </ul>
+          <div class="card-meta-row">
+            <span class="meta-chip">&#x23F1; 45–90 min read</span>
+            <span class="meta-chip">&#x1F465; Partners &amp; policymakers</span>
+            <span class="meta-chip">&#x1F4C4; 15–40 pages</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Comparison table -->
+    <div class="compare-table-wrap" role="region" aria-label="Content type comparison table">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th scope="col">Dimension</th>
+            <th scope="col" class="th-insight col-insight">💡 Insight</th>
+            <th scope="col" class="th-article col-article">✍️ Article</th>
+            <th scope="col" class="th-brief col-brief">📋 Brief</th>
+            <th scope="col" class="th-report col-report">📊 Report</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary Audience</td>
+            <td>Program staff, coaches, mentors</td>
+            <td>All fathers; general public</td>
+            <td>Fathers, family members, community members</td>
+            <td>Nonprofits, policymakers, funders, academics</td>
+          </tr>
+          <tr>
+            <td>Length</td>
+            <td>6–12 pages</td>
+            <td>800–2,000 words</td>
+            <td>2–4 pages</td>
+            <td>15–40 pages</td>
+          </tr>
+          <tr>
+            <td>Reading Time</td>
+            <td>10–15 minutes</td>
+            <td>5–8 minutes</td>
+            <td>3–5 minutes</td>
+            <td>45–90 minutes</td>
+          </tr>
+          <tr>
+            <td>Data &amp; Evidence</td>
+            <td>Charts, graphs, survey excerpts</td>
+            <td>Anecdotal; light citations</td>
+            <td>Summary-level; no citations required</td>
+            <td>Full methodology, literature review, citations</td>
+          </tr>
+          <tr>
+            <td>Tone</td>
+            <td>Analytical, informative, balanced</td>
+            <td>Personal, narrative, conversational</td>
+            <td>Encouraging, plain language, direct</td>
+            <td>Academic, formal, objective</td>
+          </tr>
+          <tr>
+            <td>Best Used For</td>
+            <td>Program planning; training workshops</td>
+            <td>Blog, newsletter, social sharing</td>
+            <td>Sharing with fathers; quick reference cards</td>
+            <td>Grant applications; policy advocacy; research</td>
+          </tr>
+          <tr>
+            <td>Output Format</td>
+            <td>PDF with infographics</td>
+            <td>Web page, blog post, PDF</td>
+            <td>PDF, social card, one-pager</td>
+            <td>PDF report with full appendix</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     AT A GLANCE (Spectrum Visual)
+     ============================================================ -->
+<section class="section-glance" aria-labelledby="glance-title">
+  <div class="container">
+
+    <div class="glance-header">
+      <div class="section-label">At a Glance</div>
+      <h2 class="section-title" id="glance-title">Quick Dimensions</h2>
+      <p class="section-desc">
+        From a quick reference to a full investigation — pick the format that matches your depth of need.
+      </p>
+    </div>
+
+    <div class="spectrum-wrap" aria-hidden="true">
+      <div class="spectrum-track"></div>
+      <div class="spectrum-labels">
+        <span>Applied Analysis</span>
+        <span>Narrative / Story</span>
+        <span>Quick Reference</span>
+        <span>Deep Research</span>
+      </div>
+    </div>
+
+    <div class="spectrum-nodes" style="grid-template-columns: repeat(4,1fr);">
+
+      <div class="spectrum-node">
+        <div class="node-icon-wrap wrap-insight">💡</div>
+        <div class="node-type-name">Insight</div>
+        <div class="node-one-liner">"Data meets real decisions."</div>
+        <div class="node-dims">
+          <div class="dim-row"><span class="dim-key">Length</span><span class="dim-val">6–12 pp</span></div>
+          <div class="dim-row"><span class="dim-key">Read Time</span><span class="dim-val">15 min</span></div>
+          <div class="dim-row"><span class="dim-key">Evidence</span><span class="dim-val">Analyzed</span></div>
+          <div class="dim-row"><span class="dim-key">Audience</span><span class="dim-val">Practitioners</span></div>
+          <div class="dim-row"><span class="dim-key">Action</span><span class="dim-val">Program</span></div>
+        </div>
+      </div>
+
+      <div class="spectrum-node">
+        <div class="node-icon-wrap wrap-article">✍️</div>
+        <div class="node-type-name">Article</div>
+        <div class="node-one-liner">"Stories that move fathers forward."</div>
+        <div class="node-dims">
+          <div class="dim-row"><span class="dim-key">Length</span><span class="dim-val">800–2K wds</span></div>
+          <div class="dim-row"><span class="dim-key">Read Time</span><span class="dim-val">6 min</span></div>
+          <div class="dim-row"><span class="dim-key">Evidence</span><span class="dim-val">Narrative</span></div>
+          <div class="dim-row"><span class="dim-key">Audience</span><span class="dim-val">All fathers</span></div>
+          <div class="dim-row"><span class="dim-key">Action</span><span class="dim-val">Inspire</span></div>
+        </div>
+      </div>
+
+      <div class="spectrum-node">
+        <div class="node-icon-wrap wrap-brief">📋</div>
+        <div class="node-type-name">Brief</div>
+        <div class="node-one-liner">"The essentials, right now."</div>
+        <div class="node-dims">
+          <div class="dim-row"><span class="dim-key">Length</span><span class="dim-val">2–4 pp</span></div>
+          <div class="dim-row"><span class="dim-key">Read Time</span><span class="dim-val">5 min</span></div>
+          <div class="dim-row"><span class="dim-key">Evidence</span><span class="dim-val">Summary</span></div>
+          <div class="dim-row"><span class="dim-key">Audience</span><span class="dim-val">Fathers</span></div>
+          <div class="dim-row"><span class="dim-key">Action</span><span class="dim-val">Personal</span></div>
+        </div>
+      </div>
+
+      <div class="spectrum-node">
+        <div class="node-icon-wrap wrap-report">📊</div>
+        <div class="node-type-name">Report</div>
+        <div class="node-one-liner">"The full picture, documented."</div>
+        <div class="node-dims">
+          <div class="dim-row"><span class="dim-key">Length</span><span class="dim-val">15–40 pp</span></div>
+          <div class="dim-row"><span class="dim-key">Read Time</span><span class="dim-val">90 min</span></div>
+          <div class="dim-row"><span class="dim-key">Evidence</span><span class="dim-val">Cited</span></div>
+          <div class="dim-row"><span class="dim-key">Audience</span><span class="dim-val">Partners</span></div>
+          <div class="dim-row"><span class="dim-key">Action</span><span class="dim-val">Policy</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXAMPLES SECTION — Tabbed
+     ============================================================ -->
+<section class="section-examples" id="examples" aria-labelledby="examples-title">
+  <div class="container">
+
+    <div class="section-label">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 7h8M3 4h8M3 10h5"/>
+      </svg>
+      Real Examples
+    </div>
+    <h2 class="section-title" id="examples-title">See Each Type in Action</h2>
+    <p class="section-desc">
+      Click each content type below to see how a real I.T.S. fatherhood topic looks in that format — from a quick brief to a full research report.
+    </p>
+
+    <!-- Tab row -->
+    <div class="tabs-row" role="tablist" aria-label="Content type examples">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-insight" data-type="insight" id="tab-insight">💡 Insight</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-article" data-type="article" id="tab-article">✍️ Article</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-brief" data-type="brief" id="tab-brief">📋 Brief</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-report" data-type="report" id="tab-report">📊 Report</button>
+    </div>
+
+
+    <!-- ---- ARTICLE PANEL ---- -->
+    <div class="tab-panel" id="panel-article" role="tabpanel" aria-labelledby="tab-article">
+      <div class="example-layout">
+
+        <div class="example-context">
+          <div class="example-eyebrow eyebrow-article">Article · Example</div>
+          <h3>What an Article looks like</h3>
+          <p>
+            Articles are editorial, narrative pieces — written with voice, personal story, and cultural context. They meet fathers where they are and invite reflection through real experiences.
+          </p>
+          <div class="context-facts">
+            <div class="fact-row">
+              <span class="fact-label">Format</span>
+              <span class="fact-value article-val">Blog / Web page</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Audience</span>
+              <span class="fact-value">All Fathers</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Read Time</span>
+              <span class="fact-value">~6 minutes</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Ends With</span>
+              <span class="fact-value article-val">Reflection question</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="example-doc" aria-label="Article example document">
+          <div class="doc-header">
+            <div class="doc-badge-row">
+              <span class="card-type-badge badge-article">✍️ Article</span>
+              <span class="doc-number">ITS-AR-2025-07</span>
+            </div>
+            <h4 class="doc-title">The Day I Put My Phone Down and Actually Saw My Son</h4>
+            <div class="doc-meta">
+              <span class="doc-meta-item">📅 March 2025</span>
+              <span class="doc-meta-item">✍️ Gabriel Ervin</span>
+              <span class="doc-meta-item">📝 ~1,400 words</span>
+              <span class="doc-meta-item">⏱ 6 min read</span>
+            </div>
+          </div>
+          <div class="doc-body">
+            <p class="doc-abstract">
+              I remember the exact moment. My son had just scored his first goal in a rec league game — and I was looking at my phone. He turned around looking for my face in the crowd. I wasn't there for him, even though I was <em>physically</em> there. That moment changed everything about how I father.
+            </p>
+            <div class="doc-finding-box finding-article">
+              <div class="finding-label article-lbl">The Point of This Article</div>
+              <div class="finding-text">Presence isn't about proximity — it's about attention. This article explores what it really means to "show up" for your children, through one father's honest reckoning with distraction, pride, and missed moments.</div>
+            </div>
+            <p style="font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">What you'll read:</p>
+            <ol class="doc-section-list" role="list">
+              <li class="doc-section-item"><span class="section-num">I</span> The Moment at the Soccer Field</li>
+              <li class="doc-section-item"><span class="section-num">II</span> What "Present" Actually Means for Fathers Today</li>
+              <li class="doc-section-item"><span class="section-num">III</span> The Phone Isn't the Problem — The Habit Is</li>
+              <li class="doc-section-item"><span class="section-num">IV</span> Three Shifts That Worked for My Family</li>
+              <li class="doc-section-item"><span class="section-num">↩</span> Reflection: When did your child last look for your face?</li>
+            </ol>
+          </div>
+          <div class="doc-cta-row">
+            <span class="doc-cta-text">Free to read &amp; share</span>
+            <a href="https://www.itsfatherhood.org" class="btn-type btn-article">Read Full Article →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ---- BRIEF PANEL ---- -->
+    <div class="tab-panel" id="panel-brief" role="tabpanel" aria-labelledby="tab-brief">
+      <div class="example-layout">
+
+        <div class="example-context">
+          <div class="example-eyebrow eyebrow-brief">Brief · Example</div>
+          <h3>What a Brief looks like</h3>
+          <p>
+            A Brief strips the topic down to what a father can read on a lunch break and act on tonight. No methodology, no footnotes — just honest guidance in plain language.
+          </p>
+          <div class="context-facts">
+            <div class="fact-row">
+              <span class="fact-label">Format</span>
+              <span class="fact-value brief-val">2-page PDF</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Audience</span>
+              <span class="fact-value">Fathers</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Read Time</span>
+              <span class="fact-value">~4 minutes</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Ends With</span>
+              <span class="fact-value brief-val">5 action steps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="example-doc" aria-label="Brief example document">
+          <div class="doc-header">
+            <div class="doc-badge-row">
+              <span class="card-type-badge badge-brief">📋 Brief</span>
+              <span class="doc-number">ITS-BR-2025-04</span>
+            </div>
+            <h4 class="doc-title">Being Present: 5 Ways to Show Up Every Day as a Father</h4>
+            <div class="doc-meta">
+              <span class="doc-meta-item">📅 March 2025</span>
+              <span class="doc-meta-item">✍️ I.T.S. Research Team</span>
+              <span class="doc-meta-item">📄 2 pages</span>
+              <span class="doc-meta-item">⏱ 4 min read</span>
+            </div>
+          </div>
+          <div class="doc-body">
+            <p class="doc-abstract">
+              <strong>What this brief covers:</strong> Research consistently shows that a father's <em>physical and emotional presence</em> is one of the strongest predictors of child wellbeing — yet many fathers struggle to translate "being present" into daily habits. This brief breaks it down simply.
+            </p>
+            <div class="doc-finding-box finding-brief">
+              <div class="finding-label brief-lbl">Key Finding</div>
+              <div class="finding-text">Fathers who engage in at least 15 minutes of undivided, device-free time with their children daily report significantly higher connection scores in MetaDad program check-ins.</div>
+            </div>
+            <p style="font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Your 5 Action Steps:</p>
+            <ol style="padding-left: var(--space-5); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: var(--space-2);">
+              <li>Put your phone in a drawer during dinner — every night this week.</li>
+              <li>Ask your child one open-ended question about their day.</li>
+              <li>Attend at least one of your child's activities this week.</li>
+              <li>Say "I love you" or give a hug before they leave for school.</li>
+              <li>Schedule a one-on-one outing — even a short walk counts.</li>
+            </ol>
+          </div>
+          <div class="doc-cta-row">
+            <span class="doc-cta-text">Free to download and share</span>
+            <a href="https://www.itsfatherhood.org" class="btn-type btn-brief">Download Brief →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ---- INSIGHT PANEL ---- -->
+    <div class="tab-panel active" id="panel-insight" role="tabpanel" aria-labelledby="tab-insight">
+      <div class="example-layout">
+
+        <div class="example-context">
+          <div class="example-eyebrow eyebrow-insight">Insight · Example</div>
+          <h3>What an Insight looks like</h3>
+          <p>
+            Insights go deeper — drawing on program data, surveys, or trends to give coaches and practitioners the "why" behind the findings, plus strategies to apply in their work.
+          </p>
+          <div class="context-facts">
+            <div class="fact-row">
+              <span class="fact-label">Format</span>
+              <span class="fact-value insight-val">8-page PDF + charts</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Audience</span>
+              <span class="fact-value">Mentors &amp; Coaches</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Read Time</span>
+              <span class="fact-value">~12 minutes</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Ends With</span>
+              <span class="fact-value insight-val">Practitioner strategies</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="example-doc" aria-label="Insight example document">
+          <div class="doc-header">
+            <div class="doc-badge-row">
+              <span class="card-type-badge badge-insight">💡 Insight</span>
+              <span class="doc-number">ITS-IN-2025-02</span>
+            </div>
+            <h4 class="doc-title">Digital Barriers to Fatherhood Engagement: What the Data Tells Us</h4>
+            <div class="doc-meta">
+              <span class="doc-meta-item">📅 February 2025</span>
+              <span class="doc-meta-item">✍️ Gabriel Ervin, I.T.S.</span>
+              <span class="doc-meta-item">📄 8 pages · 4 charts</span>
+              <span class="doc-meta-item">⏱ 12 min read</span>
+            </div>
+          </div>
+          <div class="doc-body">
+            <p class="doc-abstract">
+              <strong>What this Insight covers:</strong> Drawing on survey responses from 210 MetaDad participants (2024), this Insight analyzes where digital tools help fathers stay engaged — and where they create friction, distraction, or disconnection from their children.
+            </p>
+            <div class="doc-finding-box finding-insight">
+              <div class="finding-label insight-lbl">Data Finding</div>
+              <div class="finding-text">68% of fathers surveyed reported that screen time — their own and their child's — was their #1 challenge to meaningful daily connection. Yet 74% said they had never received guidance on family digital boundaries.</div>
+            </div>
+            <p style="font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Sections in this Insight:</p>
+            <ol class="doc-section-list" role="list">
+              <li class="doc-section-item"><span class="section-num">01</span> Survey Methodology &amp; Participant Profile</li>
+              <li class="doc-section-item"><span class="section-num">02</span> Where Digital Tools Help (Charts A &amp; B)</li>
+              <li class="doc-section-item"><span class="section-num">03</span> Where Digital Tools Harm Connection (Chart C)</li>
+              <li class="doc-section-item"><span class="section-num">04</span> Strategies for Coaches: 6 Proven Approaches</li>
+              <li class="doc-section-item"><span class="section-num">05</span> Recommended Resources &amp; Next Steps</li>
+            </ol>
+          </div>
+          <div class="doc-cta-row">
+            <span class="doc-cta-text">For program staff &amp; coaches</span>
+            <a href="https://www.itsfatherhood.org" class="btn-type btn-insight">Read Full Insight →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ---- REPORT PANEL ---- -->
+    <div class="tab-panel" id="panel-report" role="tabpanel" aria-labelledby="tab-report">
+      <div class="example-layout">
+
+        <div class="example-context">
+          <div class="example-eyebrow eyebrow-report">Report · Example</div>
+          <h3>What a Report looks like</h3>
+          <p>
+            Reports are I.T.S.'s most rigorous publications — cited, peer-reviewed ready, and built for the audiences who fund, legislate, and design programs around fatherhood.
+          </p>
+          <div class="context-facts">
+            <div class="fact-row">
+              <span class="fact-label">Format</span>
+              <span class="fact-value report-val">28-page Research PDF</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Audience</span>
+              <span class="fact-value">Funders &amp; Policymakers</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Read Time</span>
+              <span class="fact-value">~60 minutes</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-label">Ends With</span>
+              <span class="fact-value report-val">Policy recommendations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="example-doc" aria-label="Report example document">
+          <div class="doc-header">
+            <div class="doc-badge-row">
+              <span class="card-type-badge badge-report">📊 Report</span>
+              <span class="doc-number">ITS-RP-2025-01</span>
+            </div>
+            <h4 class="doc-title">Redefining Fatherhood in the Digital Era: A Study of Engaged Father Programs in Georgia, 2022–2024</h4>
+            <div class="doc-meta">
+              <span class="doc-meta-item">📅 January 2025</span>
+              <span class="doc-meta-item">✍️ I.T.S. Research Division</span>
+              <span class="doc-meta-item">📄 28 pages · Appendix</span>
+              <span class="doc-meta-item">⏱ 60 min read</span>
+            </div>
+          </div>
+          <div class="doc-body">
+            <p class="doc-abstract">
+              <strong>Abstract:</strong> This longitudinal study examines outcomes from 310 fathers enrolled in I.T.S. programs between 2022 and 2024, measuring changes in father-child engagement, financial literacy, digital literacy, and community involvement. Using mixed-methods analysis, the report identifies programmatic factors most predictive of sustained engagement.
+            </p>
+            <div class="doc-finding-box finding-report">
+              <div class="finding-label report-lbl">Primary Finding</div>
+              <div class="finding-text">Fathers who completed all three components of the C3 Approach (Classes + Courses + Coaching) showed a 2.3× increase in self-reported father-child engagement at 6-month follow-up vs. single-component participants (p &lt; 0.01).</div>
+            </div>
+            <p style="font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3);">Table of Contents:</p>
+            <ol class="doc-section-list" role="list">
+              <li class="doc-section-item"><span class="section-num">01</span> Executive Summary</li>
+              <li class="doc-section-item"><span class="section-num">02</span> Literature Review: Fatherhood Research 2015–2024</li>
+              <li class="doc-section-item"><span class="section-num">03</span> Research Design &amp; Methodology</li>
+              <li class="doc-section-item"><span class="section-num">04</span> Participant Demographics &amp; Program Data</li>
+              <li class="doc-section-item"><span class="section-num">05</span> Findings: Engagement Outcomes (6 Figures)</li>
+              <li class="doc-section-item"><span class="section-num">06</span> Policy &amp; Program Recommendations</li>
+              <li class="doc-section-item"><span class="section-num">07</span> Appendix: Survey Instruments, Data Tables</li>
+            </ol>
+          </div>
+          <div class="doc-cta-row">
+            <span class="doc-cta-text">Cite in grant applications &amp; advocacy</span>
+            <a href="https://www.itsfatherhood.org" class="btn-type btn-report">Download Report →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BROWSE ALL — Sample Publication Cards
+     ============================================================ -->
+<section class="section-browse" id="browse" aria-labelledby="browse-title">
+  <div class="container">
+
+    <div class="section-label">Browse Recent Publications</div>
+    <h2 class="section-title" id="browse-title">Latest from the Research Hub</h2>
+    <p class="section-desc">Sample publications showing what each content type looks like in the library.</p>
+
+    <div class="browse-grid">
+
+      <!-- Briefs -->
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-brief">📋 Brief</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">Fear of Vulnerability: A Father's Guide to Emotional Honesty</h3>
+          <p class="pub-excerpt">How embracing vulnerability — not avoiding it — builds deeper trust with your children and strengthens your identity as a father.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Mar 2025 · 2 pp</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-brief">Read Brief →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-insight">💡 Insight</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">Digital Barriers to Fatherhood Engagement: What the Data Tells Us</h3>
+          <p class="pub-excerpt">Survey findings from 210 MetaDad participants reveal where technology helps and where it hurts father-child connection.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Feb 2025 · 8 pp</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-insight">Read Insight →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-article">✍️ Article</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">The Day I Put My Phone Down and Actually Saw My Son</h3>
+          <p class="pub-excerpt">One father's honest account of distraction, missed moments, and the three small shifts that transformed his daily presence.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Mar 2025 · 6 min</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-article">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-report">📊 Report</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">Redefining Fatherhood in the Digital Era: A 2-Year Study of Engaged Father Programs</h3>
+          <p class="pub-excerpt">Longitudinal outcomes from 310 fathers enrolled in I.T.S. programs, 2022–2024, with policy recommendations.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Jan 2025 · 28 pp</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-report">Read Report →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-brief">📋 Brief</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">Leadership in Fatherhood: Leading by Example for Your Kids</h3>
+          <p class="pub-excerpt">Four principles from the Fatherhood Toolbox translated into a simple daily checklist for fathers building their leadership.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Dec 2024 · 3 pp</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-brief">Read Brief →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-article">✍️ Article</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">What My Father Never Said — And Why I Say It Every Day to My Kids</h3>
+          <p class="pub-excerpt">A personal reflection on breaking cycles of emotional silence in fatherhood, and the power of three words spoken daily.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Nov 2024 · 5 min</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-article">Read Article →</a>
+        </div>
+      </article>
+
+      <article class="pub-card">
+        <div class="pub-card-top">
+          <span class="card-type-badge badge-report">📊 Report</span>
+        </div>
+        <div class="pub-card-body">
+          <h3 class="pub-title">Journey 2 Manhood: Two-Year Mentorship Outcomes for Fatherless Youth</h3>
+          <p class="pub-excerpt">A comprehensive evaluation of the J2M program, measuring life skills development, academic performance, and mentor relationship quality.</p>
+        </div>
+        <div class="pub-card-footer">
+          <span class="pub-date">Oct 2024 · 34 pp</span>
+          <a href="https://www.itsfatherhood.org" class="pub-link link-report">Read Report →</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo-text">Innovative Technology Strategies</div>
+      <div class="footer-tagline">Transforming Fatherhood Through Data, Mentorship, and Digital Connection</div>
+      <div class="footer-bottom">
+        <a href="https://www.itsfatherhood.org" target="_blank" rel="noopener noreferrer">itsfatherhood.org</a>
+        &nbsp;·&nbsp; info@itsfatherhood.org &nbsp;·&nbsp; Buford, GA 30518
+        &nbsp;·&nbsp;
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script>
+/* Dark/Light toggle */
+(function() {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+
+  function updateIcon() {
+    if (!toggle) return;
+    toggle.innerHTML = theme === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+  }
+
+  updateIcon();
+  toggle && toggle.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    updateIcon();
+  });
+})();
+
+/* Sticky header shadow on scroll */
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+/* Tab switching */
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const type = btn.dataset.type;
+
+    tabBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    tabPanels.forEach(p => p.classList.remove('active'));
+
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    document.getElementById('panel-' + type).classList.add('active');
+  });
+});
+
+/* Keyboard nav for tabs */
+tabBtns.forEach((btn, i) => {
+  btn.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') tabBtns[(i + 1) % tabBtns.length].focus();
+    if (e.key === 'ArrowLeft')  tabBtns[(i - 1 + tabBtns.length) % tabBtns.length].focus();
+  });
+});
+
+/* Intersection observer for animate-in */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.animationPlayState = 'running';
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-in').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+</script>
+
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-navy-50: #EFF3F8;
+  --color-navy-100: #D9E2EF;
+  --color-navy-200: #B3C5DF;
+  --color-navy-300: #8DA8CF;
+  --color-navy-400: #6B8FBF;
+  --color-navy-500: #1B3A5C;
+  --color-navy-600: #162F4A;
+  --color-navy-700: #112438;
+  --color-navy-800: #0C1926;
+  --color-navy-900: #070E14;
+
+  --color-stone-50: #FAFAF9;
+  --color-stone-100: #F5F5F4;
+  --color-stone-200: #E7E5E4;
+  --color-stone-300: #D6D3D1;
+  --color-stone-400: #A8A29E;
+  --color-stone-500: #78716C;
+  --color-stone-600: #57534E;
+  --color-stone-700: #44403C;
+  --color-stone-800: #292524;
+  --color-stone-900: #1C1917;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    @apply font-sans text-stone-800 bg-stone-50 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .container-narrow {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .divider {
+    @apply border-t border-stone-200;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy-500 text-white font-sans font-medium text-sm tracking-wide uppercase hover:bg-navy-600 transition-colors duration-200;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-navy-500 text-navy-500 font-sans font-medium text-sm tracking-wide uppercase hover:bg-navy-50 transition-colors duration-200;
+  }
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-sans font-medium tracking-wider uppercase;
+  }
+  .badge-brief {
+    @apply inline-block px-3 py-1 text-xs font-sans font-medium tracking-wider uppercase bg-navy-50 text-navy-600;
+  }
+  .badge-report {
+    @apply inline-block px-3 py-1 text-xs font-sans font-medium tracking-wider uppercase bg-stone-200 text-stone-700;
+  }
+  .badge-insight {
+    @apply inline-block px-3 py-1 text-xs font-sans font-medium tracking-wider uppercase bg-stone-100 text-stone-600;
+  }
+}

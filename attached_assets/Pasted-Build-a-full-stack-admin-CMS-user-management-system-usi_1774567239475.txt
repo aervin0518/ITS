@@ -1,0 +1,114 @@
+Build a full-stack admin CMS user management system using Next.js + Supabase.
+
+GOAL:
+Admin should be able to create users from CMS dashboard, and the system must fully automate:
+1. Supabase Auth user creation
+2. Auto creation of user_profiles via trigger
+3. Role assignment in user_roles table
+4. Proper handling of created_at and updated_at timestamps
+
+---------------------------------------------------
+DATABASE (DO NOT CHANGE STRUCTURE)
+---------------------------------------------------
+
+auth.users (managed by Supabase Auth - DO NOT modify directly)
+
+Table: user_profiles
+- id uuid PRIMARY KEY (references auth.users.id)
+- created_at timestamp with time zone
+- updated_at timestamp with time zone
+- first_name varchar
+- last_name varchar
+- email varchar UNIQUE
+- status varchar
+
+Table: roles
+- id int PRIMARY KEY
+- name varchar (admin, mentor, mentee, user)
+
+Table: user_roles
+- user_id uuid references auth.users.id
+- role_id int references roles.id
+
+---------------------------------------------------
+FUNCTIONAL REQUIREMENTS
+---------------------------------------------------
+
+1. ADMIN CMS UI:
+- Create User form with:
+  - first_name
+  - last_name
+  - email
+  - password
+  - role dropdown (from roles table)
+
+2. USER CREATION FLOW (CRITICAL):
+When admin submits form:
+
+STEP A:
+- Use Supabase ADMIN API (auth.admin.createUser)
+- MUST run ONLY on server-side API route
+- NEVER expose service role key to frontend
+
+STEP B:
+- Pass first_name and last_name in user_metadata
+
+STEP C:
+- After auth user creation, automatically:
+  - user_profiles must be created via database trigger
+  - insert id, email, first_name, last_name, status='active'
+  - set created_at = now()
+  - set updated_at = now()
+
+STEP D:
+- Insert role into user_roles table using created user id
+
+---------------------------------------------------
+DATABASE TRIGGERS (REQUIRED)
+---------------------------------------------------
+
+1. On user creation (auth.users INSERT):
+- Automatically insert into user_profiles
+
+2. On user_profiles update:
+- Automatically set updated_at = now()
+
+---------------------------------------------------
+SECURITY RULES (VERY IMPORTANT)
+---------------------------------------------------
+
+- Use Next.js API route: /api/admin/create-user
+- Protect this route so ONLY admin users can access it
+- Use Supabase service_role key ONLY in backend
+- Do NOT expose service role key to frontend
+- Implement role check before allowing user creation
+
+---------------------------------------------------
+FRONTEND REQUIREMENTS
+---------------------------------------------------
+
+- Admin dashboard page
+- Create User form UI
+- Role dropdown fetched from roles table
+- Loading + success + error states
+- Redirect unauthorized users away from admin panel
+
+---------------------------------------------------
+BACKEND REQUIREMENTS
+---------------------------------------------------
+
+- API route: /api/admin/create-user
+- Uses supabase.auth.admin.createUser()
+- Inserts user_roles after user creation
+- Proper error handling
+- Clean separation of frontend and backend logic
+
+---------------------------------------------------
+EXPECTED FINAL RESULT
+---------------------------------------------------
+
+- No manual SQL needed for user creation
+- Fully automated user lifecycle:
+  auth.users → trigger → user_profiles → API → user_roles
+- Secure role-based admin system
+- Scalable CMS architecture

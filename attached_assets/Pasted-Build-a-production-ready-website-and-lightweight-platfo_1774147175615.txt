@@ -1,0 +1,771 @@
+Build a production-ready website and lightweight platform foundation for I.T.S. Fatherhood using a modern TypeScript web stack.
+
+The site must NOT feel like a traditional nonprofit, church flyer, or generic community program website.
+
+This brand must be positioned as a:
+
+“Fatherhood Impact & Intelligence Platform”
+
+It combines research, mentorship, technology, and ecosystem partnerships to measure, track, and improve fatherhood outcomes.
+
+The website must communicate:
+- system-level thinking
+- measurable impact
+- data intelligence
+- platform architecture
+- category creation
+- scalable community deployment
+
+Do NOT default to normal nonprofit language such as:
+- “we help fathers”
+- “we serve the community”
+- “our mission is to support”
+- “we provide services”
+
+Instead use language centered on:
+- measure
+- track
+- analyze
+- activate
+- improve
+- scale
+- intelligence
+- platform
+- ecosystem
+- outcomes
+- infrastructure
+
+==================================================
+1. TECH STACK
+==================================================
+
+Use:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- shadcn/ui components
+- Lucide icons
+- Recharts for data visuals
+- Prisma ORM
+- PostgreSQL database
+- Zod for validation
+
+Structure the app so it can start as a public-facing website, but the architecture should support later expansion into:
+- survey intake
+- partner portal
+- research dashboards
+- content/resource center
+- admin CMS-like content management
+
+==================================================
+2. BRAND / POSITIONING RULES
+==================================================
+
+The site should present I.T.S. Fatherhood as:
+- a platform, not a program
+- a model, not just a ministry
+- an intelligence engine, not just a support initiative
+- a scalable ecosystem, not a collection of events
+
+Core positioning statement:
+“I.T.S. Fatherhood is a Fatherhood Impact & Intelligence Platform that measures, tracks, and improves fatherhood outcomes using data, mentorship, and technology.”
+
+Tone:
+- credible
+- bold
+- strategic
+- modern
+- data-aware
+- hopeful without sounding soft
+- strong enough for funders, partners, researchers, churches, schools, and fathers
+
+Avoid:
+- pity-based framing
+- overly sentimental messaging
+- generic nonprofit cliches
+- stock “community outreach” copy
+
+==================================================
+3. SITE MAP / PAGES
+==================================================
+
+Build the following pages:
+
+1. Home
+2. About
+3. Platform Model
+4. Research Center
+5. MetaDAD
+6. Partners
+7. Insights
+8. Contact
+9. Donate / Support
+10. Get Involved
+
+Optional scaffold pages for future expansion:
+11. Survey
+12. Partner Intake
+13. Admin Login
+14. Dashboard Preview
+15. Resources
+
+==================================================
+4. PAGE REQUIREMENTS
+==================================================
+
+-------------------------
+HOME PAGE
+-------------------------
+Purpose:
+Immediate Blue Ocean positioning. It must instantly communicate that this is not a traditional fatherhood program.
+
+Sections:
+- Hero
+- The System Gap
+- Platform Overview
+- How It Works
+- Differentiator Comparison
+- Proof / Impact Trajectory
+- Audience Segments
+- Featured Insight / Brief
+- Call to Action
+
+Hero headline examples:
+- “We Don’t Just Support Fathers. We Build Systems That Improve Fatherhood Outcomes.”
+- “A New Standard for Measuring Fatherhood Impact.”
+- “From Fatherhood Programs to Fatherhood Intelligence.”
+
+Hero subheadline:
+I.T.S. Fatherhood combines research, mentorship, technology, and ecosystem partnerships to measure, activate, and scale fatherhood outcomes.
+
+Hero CTAs:
+- Take the Survey
+- Partner With Us
+- Explore the Platform
+
+Hero visual:
+Do not use cheesy stock imagery.
+Use a layered layout with:
+- abstract data lines
+- dashboard cards
+- fatherhood ecosystem diagram
+- animated metric blocks
+- authentic human photography only as secondary support
+
+-------------------------
+ABOUT PAGE
+-------------------------
+Purpose:
+Define the vision, why this exists, and why the category matters.
+
+Sections:
+- Why We Exist
+- The Problem with Traditional Approaches
+- What Makes I.T.S. Different
+- Founder Vision
+- Strategic Future
+
+Messaging should explain:
+This work is about building infrastructure for fatherhood measurement, growth, and long-term impact.
+
+-------------------------
+PLATFORM MODEL PAGE
+-------------------------
+Purpose:
+Explain the full system architecture in business-friendly and partner-friendly language.
+
+Sections:
+- Platform Overview
+- Four Pillars:
+  1. Data
+  2. Activation
+  3. Technology
+  4. Ecosystem
+- User / stakeholder flows
+- Outcomes model
+- Scalability section
+
+Visuals:
+- system diagram
+- process flow cards
+- metric cards
+- platform loop animation
+
+-------------------------
+RESEARCH CENTER PAGE
+-------------------------
+Purpose:
+Position the Fatherhood Research Center as a living intelligence and evidence engine.
+
+Sections:
+- Research Mission
+- What Data We Collect
+- Longitudinal Tracking
+- Community-Based Intelligence
+- Future NLP / AI Vision
+- Research Outputs (briefs, insights, reports)
+
+Include sample cards:
+- Surveys
+- Interviews
+- Assessments
+- Trends
+- Dashboards
+- Community Findings
+
+-------------------------
+METADAD PAGE
+-------------------------
+Purpose:
+Show that MetaDAD is not just a program but the activation layer of the platform.
+
+Sections:
+- What MetaDAD Is
+- Mentor / Mentee Cohort Model
+- Why It Matters
+- How It Connects to Data and Outcomes
+- Program Experience
+- Parent / Partner / School fit
+- CTA to join or partner
+
+Important:
+Language must frame MetaDAD as a structured intervention model that feeds measurable outcomes back into the platform.
+
+-------------------------
+PARTNERS PAGE
+-------------------------
+Purpose:
+Show ecosystem deployment potential.
+
+Partner types:
+- churches
+- schools
+- community organizations
+- researchers
+- funders
+- volunteers
+- civic partners
+
+Sections:
+- Why Partner
+- What Partners Gain
+- Deployment Models
+- Collaboration Types
+- Community & Engagement Collaboration Partners
+- Partner inquiry form
+
+Include interactive partner cards instead of long bios.
+
+-------------------------
+INSIGHTS PAGE
+-------------------------
+Purpose:
+Create a modern thought leadership section.
+This is not a blog page in tone. It should feel like a cross between research publishing and strategic intelligence.
+
+Categories:
+- Briefs
+- Insights
+- Reports
+- Field Notes
+
+Each content item should support tags and categories.
+
+-------------------------
+CONTACT PAGE
+-------------------------
+Purpose:
+High trust, simple action page.
+
+Sections:
+- contact form
+- speaking / partnership inquiry
+- volunteer interest
+- media inquiry
+- survey / research inquiry
+
+-------------------------
+DONATE / SUPPORT PAGE
+-------------------------
+Purpose:
+Funding with strategic language, not guilt language.
+
+Sections:
+- Why investment matters
+- What funding builds
+- Infrastructure areas
+- Strategic outcomes
+- donation CTA
+- sponsor / funder inquiry
+
+-------------------------
+GET INVOLVED PAGE
+-------------------------
+Purpose:
+Channel participation.
+
+User pathways:
+- Father
+- Volunteer
+- Partner
+- Research collaborator
+- Donor / sponsor
+
+==================================================
+5. COMPONENT LIBRARY
+==================================================
+
+Create reusable components:
+
+Global:
+- Navbar
+- Footer
+- Section wrapper
+- Page hero
+- CTA banner
+- Animated stat cards
+- Content card
+- Tag badge
+- Quote block
+- Timeline block
+- Platform diagram
+- Comparison table
+- Accordion
+- Tabs
+- Modal
+- Form block
+- Sticky CTA
+- Testimonial / insight slider
+- Partner card grid
+- Featured report card
+- Newsletter signup
+- Video / media embed block
+
+Custom platform components:
+- SystemGapSection
+- PlatformPillars
+- ResearchSignalsGrid
+- OutcomeMetricsPanel
+- EcosystemMap
+- AudiencePathways
+- ImpactTrajectory
+- ComparisonMatrix
+- DashboardPreviewCards
+- MetaDADCohortModel
+- PartnerCollaborationGrid
+- InsightsLibraryGrid
+
+==================================================
+6. ANIMATION / INTERACTION SYSTEM
+==================================================
+
+Use Framer Motion throughout, but tastefully.
+
+Animation style:
+- modern
+- smooth
+- not flashy
+- strategic
+- premium SaaS feel
+
+Required animation patterns:
+- hero text stagger reveal
+- fade/slide on scroll for sections
+- animated metric counters
+- hover lift on cards
+- tab transitions
+- line-drawing or node-connection animation for ecosystem diagrams
+- subtle parallax on hero background shapes
+- CTA pulse glow on high-priority buttons
+- content filter transitions on insights page
+
+Do not overanimate.
+The site should feel intelligent and intentional.
+
+==================================================
+7. VISUAL DESIGN DIRECTION
+==================================================
+
+Design language:
+- premium nonprofit meets modern SaaS platform
+- clean grids
+- bold typography
+- strong spacing
+- high contrast sections
+- minimal clutter
+- data visuals integrated into storytelling
+
+Recommended visual characteristics:
+- large headings
+- layered content blocks
+- rounded cards
+- subtle gradients
+- visual hierarchy around platform messaging
+- dark/light section alternation
+- abstract network or systems-inspired background motifs
+
+Avoid:
+- flyer design
+- crowded icon overload
+- excessive stock images
+- cartoonish visuals
+- generic church website look
+
+==================================================
+8. CONTENT MODEL / DATABASE SCHEMA
+==================================================
+
+Use Prisma with PostgreSQL.
+
+Create schema models for the public site and future platform readiness.
+
+Models:
+
+1. SitePage
+- id
+- slug
+- title
+- subtitle
+- seoTitle
+- seoDescription
+- status
+- createdAt
+- updatedAt
+
+2. Insight
+- id
+- title
+- slug
+- excerpt
+- body
+- categoryId
+- featuredImage
+- publishedAt
+- status
+- authorId
+- createdAt
+- updatedAt
+
+3. InsightCategory
+- id
+- name
+- slug
+- description
+
+Seed categories:
+- Briefs
+- Insights
+- Reports
+- Field Notes
+
+4. Partner
+- id
+- name
+- organization
+- role
+- category
+- bioShort
+- imageUrl
+- featured
+- displayOrder
+- createdAt
+- updatedAt
+
+5. PlatformMetric
+- id
+- label
+- value
+- unit
+- description
+- displayOrder
+- isPublic
+- createdAt
+- updatedAt
+
+6. ProgramModel
+- id
+- name
+- slug
+- summary
+- description
+- status
+- createdAt
+- updatedAt
+
+7. ContactSubmission
+- id
+- name
+- email
+- organization
+- inquiryType
+- message
+- createdAt
+
+8. VolunteerInterest
+- id
+- name
+- email
+- phone
+- interestArea
+- experience
+- message
+- createdAt
+
+9. PartnerInquiry
+- id
+- organization
+- contactName
+- email
+- partnerType
+- goals
+- message
+- createdAt
+
+10. Resource
+- id
+- title
+- slug
+- type
+- description
+- url
+- isPublic
+- createdAt
+- updatedAt
+
+11. SurveyCTA
+- id
+- title
+- description
+- buttonText
+- buttonUrl
+- active
+- createdAt
+- updatedAt
+
+12. AudienceSegment
+- id
+- name
+- slug
+- title
+- description
+- ctaText
+- ctaUrl
+- displayOrder
+
+Add enums for:
+- PublishStatus
+- InquiryType
+- PartnerType
+- ResourceType
+
+==================================================
+9. SEED CONTENT
+==================================================
+
+Seed enough placeholder content so the site looks real on first load.
+
+Seed examples:
+- 4 insight articles
+- 4 partner records
+- 6 public metrics
+- 4 audience segments
+- 3 platform model entries
+- 1 active survey CTA
+
+Use strong placeholder copy aligned with:
+- fatherhood outcomes
+- data intelligence
+- community systems
+- measurable change
+
+==================================================
+10. NAVIGATION
+==================================================
+
+Top nav:
+- Home
+- About
+- Platform Model
+- Research Center
+- MetaDAD
+- Partners
+- Insights
+- Support
+- Contact
+
+Include a persistent CTA button:
+- Take the Survey
+
+Mobile nav must be clean and polished.
+
+==================================================
+11. CMS-LIKE CONTENT STRATEGY
+==================================================
+
+Even if no full CMS is installed, structure data and components so content can later be managed through:
+- database admin
+- simple internal admin page
+- or headless CMS integration later
+
+Build with separation between:
+- layout
+- section config
+- content records
+- display logic
+
+==================================================
+12. SEO / METADATA
+==================================================
+
+Each page must include:
+- custom title
+- meta description
+- Open Graph fields scaffold
+- semantic headings
+- clean URLs
+
+SEO tone should reinforce:
+- fatherhood research
+- fatherhood impact
+- fatherhood data
+- mentorship and youth development
+- community intelligence
+- family outcomes
+
+==================================================
+13. ACCESSIBILITY / UX
+==================================================
+
+Ensure:
+- keyboard accessible nav
+- accessible contrast
+- clear heading structure
+- descriptive button labels
+- form validation
+- mobile responsiveness
+- performant image loading
+
+==================================================
+14. SPECIAL SECTIONS TO EMPHASIZE
+==================================================
+
+Build these standout homepage sections carefully:
+
+A. “The System Gap”
+Copy angle:
+Fatherhood is discussed everywhere, but measured almost nowhere.
+
+B. “From Program to Platform”
+A visual comparison showing the shift from:
+- isolated events
+- attendance counts
+- anecdotal success
+
+to:
+- infrastructure
+- longitudinal data
+- measurable outcomes
+- scalable deployment
+
+C. “How the Platform Works”
+Show:
+Data -> Activation -> Intelligence -> Community Impact
+
+D. “Who This Platform Serves”
+Paths for:
+- fathers
+- youth
+- churches
+- schools
+- community partners
+- funders / researchers
+
+==================================================
+15. COPY GUIDELINES
+==================================================
+
+All on-site copy must obey these rules:
+- never sound generic
+- avoid excessive “support/help/serve” language
+- lead with measurable and structural language
+- blend conviction with clarity
+- sound strategic enough for grantmakers and partners
+- still remain understandable to community users
+
+Example copy direction:
+Bad:
+“We are dedicated to helping fathers and families through meaningful support.”
+Good:
+“We build systems that measure and improve fatherhood outcomes across families and communities.”
+
+Bad:
+“Our programs uplift fathers.”
+Good:
+“Our platform activates father engagement through research-backed mentorship and measurable intervention models.”
+
+==================================================
+16. DELIVERABLES
+==================================================
+
+Generate:
+1. Full project structure
+2. Next.js app routes
+3. Prisma schema
+4. Seed script
+5. Reusable UI components
+6. Responsive page layouts
+7. Framer Motion animations
+8. Placeholder but polished content
+9. Form handling with validation
+10. Clean README with setup instructions
+
+==================================================
+17. FILE / FOLDER STRUCTURE
+==================================================
+
+Use a clean scalable structure like:
+
+/app
+  /(public)
+    /page.tsx
+    /about/page.tsx
+    /platform-model/page.tsx
+    /research-center/page.tsx
+    /metadad/page.tsx
+    /partners/page.tsx
+    /insights/page.tsx
+    /support/page.tsx
+    /get-involved/page.tsx
+    /contact/page.tsx
+  /api
+/components
+  /layout
+  /sections
+  /ui
+  /charts
+  /forms
+/lib
+  /content
+  /data
+  /utils
+  /animations
+/prisma
+  schema.prisma
+  seed.ts
+/types
+
+==================================================
+18. FINAL QUALITY BAR
+==================================================
+
+Before finishing, evaluate the build using this question:
+
+“If the organization name were removed, would this still feel like a technology-enabled impact platform rather than a traditional nonprofit site?”
+
+If no, rewrite the copy and visual hierarchy until the answer is yes.
+
+Also ensure the site communicates this core truth:
+“This is not just a fatherhood program. This is infrastructure for measuring and improving fatherhood outcomes.”
+
+Now generate the full application scaffold, page structures, core components, schema, and polished placeholder content accordingly.

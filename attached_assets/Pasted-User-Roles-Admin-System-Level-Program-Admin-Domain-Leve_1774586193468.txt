@@ -1,0 +1,175 @@
+User Roles
+•	Admin (System-Level)
+•	Program Admin (Domain-Level)
+o	Father’s Table
+o	Community Outreach
+o	Grant Management
+•	Researcher
+•	Partner
+•	Subscriber
+Post-Login Redirection
+•	Admin → /cms/dashboard
+•	Program Admin → /cms/program
+•	Researcher → /cms/research
+•	Partner → /cms/partner
+•	Subscriber → /subscriber
+Security Features
+•	Protected routes via Supabase session + Next.js middleware
+•	Forgot/Reset password (Supabase built-in)
+•	Email verification
+•	Row-Level Security (RLS) for role-based access
+•	PII masking (SSN and sensitive fields)
+•	Audit logging
+________________________________________
+2. CMS Structure
+Main Sidebar Navigation
+•	Dashboard
+•	Content
+•	Categories
+•	Media Library
+•	Research Data
+•	Transcripts
+•	Reports & Analytics
+•	Users
+•	Partners
+•	Notifications
+•	Settings
+________________________________________
+3. Dashboard (Role-Based & Dynamic)
+Features
+•	Personalized dashboards based on role and program
+•	Widgets:
+o	30-second field video submissions
+o	Individual survey insights
+o	Fatherhood profile summaries (granular, PII-masked)
+o	Sentiment analysis
+o	Recent activity feed
+________________________________________
+4. Content Management
+Content Types
+•	Article
+•	Report
+•	Event
+•	Resource
+•	Publication
+•	Insight
+•	Brief
+Features
+•	Create, edit, delete content
+•	Workflow: Draft → In Review → Published → Archived
+•	Assign categories & tags
+•	Search/filtering
+•	Role-based publishing permissions
+________________________________________
+6. Media Library (Supabase Storage)
+Supported Assets
+•	Images
+•	PDFs
+•	Research documents
+•	YouTube video links
+•	30-second field videos
+Features
+•	Secure uploads via Supabase Storage
+•	Signed URLs for private content
+•	Tagging & categorization
+________________________________________
+7. Research Data Module
+Purpose
+Central repository for structured research data
+Includes
+•	Survey responses (via Jotform API or manual upload)
+•	Metadata for studies
+•	Individual survey data
+•	Assessment profiles
+•	Fatherhood profiles (granular, PII-masked)
+Features
+•	Tagging & categorization
+•	Export to CSV/Excel
+•	Link to transcripts & content
+•	Role-based access control via RLS
+________________________________________
+8. Transcripts Module
+Sources
+•	YouTube interviews
+•	Zoom recordings
+•	30-second video interviews
+•	Assessment interview transcripts
+Features
+•	Upload transcripts (text/PDF/doc)
+•	Link transcripts to research studies & content
+•	Metadata fields: Interview date, Source, Speaker/interviewer, Tags/topics
+•	Search/filter transcripts
+•	Optional version control
+________________________________________
+9. Survey Integration (Jotform)
+•	Surveys managed externally in Jotform
+•	CMS will:
+o	Store survey links
+o	Fetch/upload response data
+o	Display summarized results & individual-level insights
+________________________________________
+10. Reports & Analytics
+•	Dashboard & operational metrics (CMS)
+•	Deep analytics & trends (Power BI)
+•	Research insights based on transcripts & survey data
+•	Content performance & engagement metrics
+•	Sentiment analysis visualizations
+________________________________________
+11. User Management
+•	View all users
+•	Assign roles
+•	Activate/deactivate users
+•	Manage program mapping
+________________________________________
+12. Partner Management
+•	Share selected reports & publications
+•	Restrict access to assigned content
+•	Track shared resources
+________________________________________
+13. Notifications
+•	Content approval alerts
+•	New transcript uploads
+•	Research updates
+•	System notifications
+________________________________________
+14. Settings
+•	System configuration
+•	Role & permission settings
+•	Integration settings (Jotform, email)
+•	PII visibility & access control
+________________________________________
+15. Role-Based Dashboards
+Admin (System-Level)
+•	Full system access
+•	Manage users, roles, settings
+•	Access all research data (including sensitive PII)
+Program Admin (Domain-Level)
+•	Manage specific program areas
+•	Access program-specific data only
+•	Approve content within domain
+•	PII fields masked where necessary
+Researcher
+•	Upload/manage transcripts
+•	View/analyze research data
+•	Submit content for review
+Partner
+•	View/download assigned reports
+•	Read-only access
+Subscriber
+•	Access published content
+•	View public research insights
+________________________________________
+16. Access Control Rules
+•	Admin → Full access
+•	Program Admin → Domain-restricted access
+•	Researcher → Controlled access
+•	Partner → Read-only
+•	Subscriber → Public + personal access only
+Security Enhancements: least privilege, field-level permissions, PII masking
+________________________________________
+17. Research-Specific Considerations
+•	Strong data privacy controls
+•	Separation of public content & internal research data
+•	Audit logs for tracking changes
+•	Content approval workflow
+•	Granular fatherhood profiles with PII protection
